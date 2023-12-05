@@ -1,11 +1,12 @@
 ﻿string[] cliArgs = Environment.GetCommandLineArgs();
-if (cliArgs.Length != 2)
-{
-    Console.WriteLine("Usage: dotnet run <day>");
-    return;
-}
+// if (cliArgs.Length != 2)
+// {
+//     Console.WriteLine("Usage: dotnet run <day>");
+//     return;
+// }
 
-int day = int.Parse(cliArgs[1]);
+// int day = int.Parse(cliArgs[1]);
+int day = 5;
 
 (string part1, string? part2) = day switch
 {
@@ -13,6 +14,7 @@ int day = int.Parse(cliArgs[1]);
     2 => (Day2.Part1(), Day2.Part2()),
     3 => (Day3.Part1(), Day3.Part2()),
     4 => (Day4.Part1(), Day4.Part2()),
+    5 => (Day5.Part1(), Day5.Part2()),
     _ => throw new NotImplementedException($"Day {day} is not implemented yet"),
 };
 
