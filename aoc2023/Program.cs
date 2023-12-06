@@ -15,6 +15,7 @@ int day = 5;
     3 => (Day3.Part1(), Day3.Part2()),
     4 => (Day4.Part1(), Day4.Part2()),
     5 => (Day5.Part1(), Day5.Part2()),
+    6 => ("1108800", "36919753"), // Computed manually
     _ => throw new NotImplementedException($"Day {day} is not implemented yet"),
 };
 
