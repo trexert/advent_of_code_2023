@@ -5,8 +5,7 @@
 //     return;
 // }
 
-// int day = int.Parse(cliArgs[1]);
-int day = 5;
+int day = int.Parse(cliArgs[1]);
 
 (string part1, string? part2) = day switch
 {
@@ -16,6 +15,7 @@ int day = 5;
     4 => (Day4.Part1(), Day4.Part2()),
     5 => (Day5.Part1(), Day5.Part2()),
     6 => ("1108800", "36919753"), // Computed manually
+    7 => (Day7.Part1(), Day7.Part2()),
     _ => throw new NotImplementedException($"Day {day} is not implemented yet"),
 };
 

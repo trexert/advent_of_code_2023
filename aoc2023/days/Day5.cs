@@ -32,7 +32,6 @@ public class Day5
 
         foreach (long[] seedPair in mappings.Value.Item1.Chunk(2))
         {
-            Console.WriteLine("New pair");
             List<(long, long)> valueRanges = [(seedPair[0], seedPair[0] + seedPair[1])];
             foreach (Mapping[] section in mappings.Value.Item2)
             {
