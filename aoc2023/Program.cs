@@ -16,6 +16,7 @@ int day = int.Parse(cliArgs[1]);
     5 => (Day5.Part1(), Day5.Part2()),
     6 => ("1108800", "36919753"), // Computed manually
     7 => (Day7.Part1(), Day7.Part2()),
+    8 => (Day8.Part1(), Day8.Part2()),
     _ => throw new NotImplementedException($"Day {day} is not implemented yet"),
 };
 
