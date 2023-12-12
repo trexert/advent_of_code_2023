@@ -18,6 +18,7 @@ int day = int.Parse(cliArgs[1]);
     7 => (Day7.Part1(), Day7.Part2()),
     8 => (Day8.Part1(), Day8.Part2()),
     9 => (Day9.Part1(), Day9.Part2()),
+    10 => (Day10.Part1(), null),
     _ => throw new NotImplementedException($"Day {day} is not implemented yet"),
 };
 
