@@ -26,27 +26,25 @@ public partial class Day8
     public static string Part2()
     {
         (string directions, Dictionary<string, (string, string)> nodes) = ParseInput();
-        int i = 0;
-        List<string> currentNodes = nodes.Keys.Where(node => node.EndsWith('A')).ToList();
-        while (!currentNodes.All(node => node.EndsWith('Z')))
+        List<string> startingNodes = nodes.Keys.Where(node => node.EndsWith('A')).ToList();
+        List<ulong> cycleLengths = [];
+        foreach (string startingNode in startingNodes)
         {
-            char dir = directions[i % directions.Length];
-            for (int j = 0; j < currentNodes.Count; j++)
+            int i = 0;
+            string node = startingNode;
+            while (!node.EndsWith('Z'))
             {
-                string node = currentNodes[j];
-                if (dir == 'L')
+                node = directions[i % directions.Length] switch
                 {
-                    node = nodes[node].Item1;
-                }
-                else if (dir == 'R')
-                {
-                    node = nodes[node].Item2;
-                }
-                currentNodes[j] = node;
+                    'L' => nodes[node].Item1,
+                    'R' => nodes[node].Item2,
+                    _ => throw new Exception("unexpected direction"),
+                };
+                i++;
             }
-            i++;
+            cycleLengths.Add((ulong)i);
         }
-        return i.ToString();
+        return Lib.Lcm(cycleLengths).ToString();
     }
 
     private static (string, Dictionary<string, (string, string)>) ParseInput()
